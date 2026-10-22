@@ -1,0 +1,6 @@
+*.local
+*.png
+.DS_Store
+.playwright-mcp
+dist
+node_modules

@@ -1,0 +1,262 @@
+/*
+ * Dizayn tokenlari — YAGONA rang manbai (XB-ERP dan olingan, `--xb-*` nomlari saqlangan).
+ *
+ * Qoida: modul fayllarida xom hex rang yozilmaydi. Faqat shu yerdagi
+ * o'zgaruvchilar ishlatiladi. `npm run check` buni nazorat qiladi.
+ *
+ * Manba: Claude Design v2 (2026-08-19). v1 dagi qorong'i qobiq yorug'ga
+ * almashtirildi, radiuslar kattalashtirildi, soyalar qo'shildi va qorong'i
+ * mavzu palitrasi paydo bo'ldi.
+ *
+ * Kontrast: barcha matn juftliklari WCAG 2.1 AA (4.5:1) dan, bezak
+ * belgilari 1.4.11 (3:1) dan o'tadi — ikkala mavzuda ham.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Domen aksentlari ---------- */
+  --xb-dom-fin: #0f7b5a; /* Moliya va boshqaruv hisobi */
+  --xb-dom-sup: #2b5fa8; /* Ta'minot va shartnomalar  */
+  --xb-dom-ast: #a0651a; /* Aktivlar va ombor         */
+  --xb-dom-plt: #4f5d75; /* Platforma va integratsiya */
+
+  /* ---------- Hujjat holati ohanglari ----------
+     Hujjat jarayoni 7 bosqichli: qoralama → imzolash → tasdiq → ijro →
+     qisman → bajarilgan → rad. Har biriga alohida ohang; barchasi matn va
+     ikona bilan birga keladi, rang yolg'iz ma'no tashimaydi. */
+  --xb-mut: #5f6d80; /* qoralama, neytral   */
+  --xb-warn: #8e5a12; /* jarayonda, e'tibor  */
+  --xb-info: #2b5fa8; /* tasdiqlangan        */
+  --xb-primary: #00707f; /* ijroda              */
+  --xb-accent: #7a4099; /* qisman, oraliq      */
+  --xb-ok: #0f7b5a; /* bajarilgan          */
+  --xb-err: #b4321f; /* rad, xato           */
+
+  --xb-mut-bg: #f4f6f9;
+  --xb-warn-bg: #fdf1e1;
+  --xb-info-bg: #e8effa;
+  --xb-primary-bg: #dff0f2;
+  --xb-accent-bg: #f2eaf7;
+  --xb-ok-bg: #e9f4f0;
+  --xb-err-bg: #fbe9e6;
+
+  /* Yashil oilaning qo'shimcha pog'onalari — brend gradienti,
+     diagramma qadamlari va formula muharriri uchun. */
+  --xb-ok-deep: #0a5c43;
+  --xb-ok-bright: #17a579;
+  --xb-ok-pale: #9be3c4;
+
+  /* ---------- Yuzalar ---------- */
+  --xb-bg: #f6f7f9; /* sahifa foni         */
+  --xb-surface: #ffffff; /* karta, topbar, menyu */
+  --xb-surface-alt: #fbfcfd; /* sidebar, zebra qator */
+  --xb-surface-head: #fbfcfd; /* jadval sarlavhasi   */
+  --xb-surface-sunk: #f4f6f9; /* tab paneli, status  */
+  --xb-surface-hover: #f1f4f8; /* hover holati        */
+  --xb-selected: #e9f4f0; /* tanlangan qator     */
+  --xb-on-accent: #ffffff; /* aksent fonidagi matn */
+
+  --xb-border: #e7eaf0;
+  --xb-border-soft: #eef1f6;
+  --xb-border-row: #f1f4f8;
+  --xb-border-tab: #e7eaf0;
+  --xb-border-strong: #d5dae2;
+  --xb-inert: #d5dae2; /* bajarilmagan qadam */
+
+  /* ---------- Matn ---------- */
+  --xb-ink: #101720;
+  --xb-ink-strong: #47566c;
+  --xb-ink-muted: #5f6d80;
+  --xb-ink-faint: #647087;
+  /* Faqat bezak belgilari uchun: ▾ karet, × yopish, ⌘K chip, ▸ o'q.
+     Ma'no tashiydigan matnda ishlatilmaydi — 3:1 dan o'tadi, 4.5:1 dan yo'q. */
+  --xb-glyph: #8290a2;
+
+  /* ---------- Tipografika ---------- */
+  --xb-font: 'XB Apostrof', 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --xb-font-mono: 'XB Apostrof', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  /* Shkala: v2 dagi yarim piksellar (9.5 / 11.5 / 12.5 / 13.5 / 15.5)
+     eng yaqin butun pog'onaga yaxlitlangan. Asosiy o'lcham 12 → 13px. */
+  --xb-t-xs: 10px; /* mono kod, meta          */
+  --xb-t-sm: 11px; /* ikkilamchi matn, izoh   */
+  --xb-t-md: 12px; /* mayda UI: menyu, tab    */
+  --xb-t-base: 13px; /* asosiy matn, jadval     */
+  --xb-t-lg: 14px; /* karta sarlavhasi        */
+  --xb-t-xl: 16px; /* modul nomi              */
+  --xb-t-2xl: 21px; /* sahifa sarlavhasi, KPI  */
+
+  --xb-w-normal: 400;
+  --xb-w-medium: 500;
+  --xb-w-semi: 600;
+  --xb-w-bold: 700;
+
+  /* ---------- Oraliq ---------- */
+  --xb-s-1: 4px;
+  --xb-s-2: 8px;
+  --xb-s-3: 12px;
+  --xb-s-4: 16px;
+  --xb-s-5: 24px;
+
+  /* ---------- Radius ----------
+     v1 da 2/4px edi. v2 sezilarli yumaloqroq: chip 5, kod 7, tugma 9,
+     karta 13, holat belgisi to'liq kapsula. */
+  --xb-r-xs: 5px; /* mayda chip, yopish tugmasi */
+  --xb-r-sm: 7px; /* kod belgisi, segment       */
+  --xb-r-md: 9px; /* tugma, sidebar, kirit      */
+  --xb-r-lg: 11px; /* modul kartochkasi, filtr   */
+  --xb-r-xl: 13px; /* karta, KPI, modal          */
+  --xb-r-pill: 20px; /* holat belgisi              */
+
+  /* ---------- Soya ----------
+     v1 tekis edi. v2 da ikki qatlamli yumshoq soya: yaqin kontur +
+     uzoq tarqalish. Qorong'i mavzuda quyuqroq va kengroq. */
+  --xb-shadow-soft: 0 1px 2px rgba(16, 23, 32, 0.04);
+  --xb-shadow-card: 0 1px 2px rgba(16, 23, 32, 0.04), 0 6px 16px -8px rgba(16, 23, 32, 0.06);
+  --xb-shadow-menu: 0 24px 48px -12px rgba(16, 23, 32, 0.22), 0 4px 12px rgba(16, 23, 32, 0.06);
+  --xb-shadow-modal: 0 32px 64px -16px rgba(16, 23, 32, 0.28), 0 6px 16px rgba(16, 23, 32, 0.08);
+  --xb-shadow-brand: 0 2px 6px rgba(15, 123, 90, 0.28);
+  --xb-parda: rgba(16, 23, 32, 0.45);
+
+  /* Brend belgisi — yagona gradient ishlatiladigan joy */
+  --xb-brand: linear-gradient(155deg, var(--xb-ok-bright), var(--xb-ok-deep));
+
+  /* ---------- Diagramma ---------- */
+  --xb-chart-base: #5f6d80; /* boshlang'ich ustun */
+  --xb-chart-step: #17a579; /* qo'shiluvchi qadam */
+  /* Formula muharriri ikkala mavzuda ham quyuq qoladi — kod paneli
+     shunday kutiladi va yashil matn faqat qora fonda o'qiladi. */
+  --xb-code-bg: #101720;
+  --xb-code-ink: #9be3c4;
+
+  /* ---------- Boshqa ---------- */
+  --xb-focus: 2px solid #2b7fd4;
+  --xb-scroll: #d5dae2;
+}
+
+/* ---------------------------------------------------------------------------
+ * Qorong'i mavzu.
+ *
+ * Yuza va matn tokenlari aynan bir xil nom bilan qayta e'lon qilinadi —
+ * shuning uchun komponent uslublarida hech qanday `[data-theme]` shart yo'q.
+ * Ohanglar yorug'roq va to'yinganroq: qorong'i fonda to'q rang o'qilmaydi.
+ * -------------------------------------------------------------------------- */
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --xb-dom-fin: #2fcb98;
+  --xb-dom-sup: #6aa6f0;
+  --xb-dom-ast: #e3a24e;
+  --xb-dom-plt: #9aaecb;
+
+  --xb-mut: #8d9db3;
+  --xb-warn: #e9b871;
+  --xb-info: #6aa6f0;
+  --xb-primary: #45c6d6;
+  --xb-accent: #c08be0;
+  --xb-ok: #2fcb98;
+  --xb-err: #f2705a;
+
+  --xb-mut-bg: #1c2532;
+  --xb-warn-bg: #33240f;
+  --xb-info-bg: #12243b;
+  --xb-primary-bg: #0d2e33;
+  --xb-accent-bg: #2a1a3a;
+  --xb-ok-bg: #10352a;
+  --xb-err-bg: #3b1b17;
+
+  --xb-ok-deep: #23a87c;
+  --xb-ok-bright: #35d6a2;
+  --xb-ok-pale: #1f5943;
+
+  --xb-bg: #0d1319;
+  --xb-surface: #161e29;
+  --xb-surface-alt: #131a25;
+  --xb-surface-head: #131a25;
+  --xb-surface-sunk: #1c2532;
+  --xb-surface-hover: #202b39;
+  --xb-selected: #10352a;
+  --xb-on-accent: #0d1319;
+
+  --xb-border: #26313f;
+  --xb-border-soft: #202b39;
+  --xb-border-row: #202b39;
+  --xb-border-tab: #26313f;
+  --xb-border-strong: #35465c;
+  --xb-inert: #35465c;
+
+  --xb-ink: #e9eef6;
+  --xb-ink-strong: #b7c4d6;
+  --xb-ink-muted: #8d9db3;
+  --xb-ink-faint: #8d9db3;
+  --xb-glyph: #6c7d94;
+
+  --xb-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --xb-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 16px -8px rgba(0, 0, 0, 0.5);
+  --xb-shadow-menu: 0 24px 48px -12px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.45);
+  --xb-shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.75), 0 6px 16px rgba(0, 0, 0, 0.5);
+  --xb-shadow-brand: 0 2px 6px rgba(47, 203, 152, 0.24);
+  --xb-parda: rgba(4, 8, 12, 0.66);
+
+  --xb-chart-base: #8d9db3;
+  --xb-chart-step: #35d6a2;
+  --xb-code-bg: #0a0f14;
+  --xb-code-ink: #9be3c4;
+
+  --xb-focus: 2px solid #6aa6f0;
+  --xb-scroll: #35465c;
+}
+
+/*
+ * O'zbek lotin apostrofi (ʻ U+02BB, ʼ U+02BC).
+ *
+ * IBM Plex Sans da bu belgilar bor, lekin ularning kengligi juda katta —
+ * 40px shriftda 24px, ya'ni «a» harfidan kengroq. Natijada «Qoraqalpogʻiston»
+ * so'zi «Qoraqalpog ' iston» bo'lib ko'rinadi.
+ *
+ * Shuning uchun faqat shu ikki kod nuqtasi tizim shriftidan olinadi.
+ * Qolgan barcha matn IBM Plex Sans da qoladi.
+ */
+@font-face {
+  font-family: 'XB Apostrof';
+  src: local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), local('Arial');
+  unicode-range: U+02BB, U+02BC;
+}
+
+/* ---------- Bazaviy qatlam ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--xb-bg);
+  color: var(--xb-ink);
+  font-family: var(--xb-font);
+  font-size: var(--xb-t-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Klaviatura bilan ishlash — auditda 0 ta fokus holati topilgan edi. */
+:focus-visible {
+  outline: var(--xb-focus);
+  outline-offset: 1px;
+  border-radius: var(--xb-r-xs);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--xb-scroll);
+  border-radius: var(--xb-r-md);
+  border: 3px solid var(--xb-bg);
+}
