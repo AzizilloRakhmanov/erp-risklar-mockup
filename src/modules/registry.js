@@ -4,4 +4,6 @@
  *
  *   { id: 'risk-reyestri', nom: 'Risklar reyestri', izoh: '...' }
  */
-export const MODULLAR = [];
+import risklar from './risklar/module.js';
+
+export const MODULLAR = [risklar];

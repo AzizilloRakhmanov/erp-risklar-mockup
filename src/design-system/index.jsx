@@ -6,3 +6,4 @@
  * hisobga oling.
  */
 export { default as Icon } from './Icon.jsx';
+export * from './kit.jsx';

@@ -1,0 +1,805 @@
+.xira {
+  color: var(--xb-ink-muted);
+}
+.mono {
+  font-family: var(--xb-font-mono);
+  letter-spacing: -0.2px;
+}
+.kichik {
+  margin-top: 2px;
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-muted);
+}
+.ong {
+  text-align: right !important;
+}
+.keng {
+  grid-column: 1 / -1;
+}
+.manba {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--xb-t-md);
+  color: var(--xb-ink-strong);
+  white-space: nowrap;
+}
+
+/* ---------------- Forma (oynalar) ---------------- */
+.forma {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 16px;
+}
+.forma p {
+  margin: 0;
+}
+.qiymatBlok {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--xb-r-md);
+  background: var(--xb-surface-sunk);
+}
+.ogoh {
+  grid-column: 1 / -1;
+  padding: 10px 12px;
+  border-radius: var(--xb-r-md);
+  background: var(--xb-warn-bg);
+  color: var(--xb-warn);
+  font-weight: var(--xb-w-medium);
+}
+.ogoh a {
+  color: inherit;
+  font-family: var(--xb-font-mono);
+}
+
+/* ---------------- Fayllar ---------------- */
+.faylTanlash,
+.fayllar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.fayl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 520px;
+  padding: 7px 10px;
+  border: 1px solid var(--xb-border);
+  border-radius: var(--xb-r-md);
+  background: var(--xb-surface-alt);
+  color: var(--xb-ink-strong);
+}
+.faylMatn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.faylNom {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--xb-ink);
+  font-weight: var(--xb-w-medium);
+}
+.faylMatn .xira {
+  font-size: var(--xb-t-sm);
+}
+.faylX {
+  border: 0;
+  background: transparent;
+  color: var(--xb-ink-muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.yukla {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--xb-r-sm);
+  color: var(--xb-ink-strong);
+}
+.yukla:hover {
+  background: var(--xb-surface-hover);
+}
+
+/* ---------------- Ro'yxat ---------------- */
+.sanaOraliq {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sanaOraliq input {
+  width: 150px;
+}
+.chiplar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: -6px;
+}
+.tabQator {
+  padding: 4px 12px 0;
+}
+.jadvalWrap {
+  overflow-x: auto;
+}
+.jadval {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--xb-t-base);
+}
+.jadval th {
+  padding: 0;
+  text-align: left;
+  font-size: var(--xb-t-sm);
+  font-weight: var(--xb-w-semi);
+  color: var(--xb-ink-muted);
+  background: var(--xb-surface-head);
+  border-bottom: 1px solid var(--xb-border);
+  white-space: nowrap;
+}
+.jadval th:not(:has(button)) {
+  padding: 10px 12px;
+}
+.sarTugma {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sarTugma:hover {
+  color: var(--xb-ink);
+}
+.jadval td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--xb-border-row);
+  vertical-align: top;
+}
+.qator {
+  cursor: pointer;
+}
+.qator:hover td {
+  background: var(--xb-surface-hover);
+}
+.bosh {
+  padding: 40px !important;
+  text-align: center;
+  color: var(--xb-ink-muted);
+}
+.raqam {
+  font-family: var(--xb-font-mono);
+  font-weight: var(--xb-w-semi);
+  color: var(--xb-ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.raqam:hover {
+  text-decoration: underline;
+}
+.kenglik {
+  min-width: 220px;
+  max-width: 340px;
+}
+.qiymatKatak {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.sahifalash {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--xb-border-row);
+}
+
+/* ---------------- Ko'rish sahifasi ---------------- */
+.topilmadi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 56px;
+  border: 1px dashed var(--xb-border-strong);
+  border-radius: var(--xb-r-xl);
+  background: var(--xb-surface);
+}
+.orqaga {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--xb-t-md);
+  font-weight: var(--xb-w-medium);
+  color: var(--xb-ink-muted);
+  text-decoration: none;
+}
+.orqaga:hover {
+  color: var(--xb-ink);
+}
+
+.korishTarmoq {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
+  gap: var(--xb-s-4);
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  .korishTarmoq {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.ustun {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xb-s-4);
+  min-width: 0;
+}
+
+.maydonN {
+  display: inline-grid;
+  place-items: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--xb-surface-sunk);
+  font-family: var(--xb-font-mono);
+  font-size: var(--xb-t-xs);
+  color: var(--xb-ink-strong);
+}
+.izohForma {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.izohAmal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tarixKarta {
+  position: sticky;
+  top: 76px;
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+}
+
+/* Flow */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 760px) {
+  .flow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.qadam {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--xb-r-lg);
+  border: 1px solid var(--xb-border);
+  color: var(--xb-ink-faint);
+}
+.qadamNom {
+  font-weight: var(--xb-w-semi);
+  color: var(--xb-ink-strong);
+}
+.qadamOtdi {
+  color: var(--xb-ok);
+  background: var(--xb-surface-alt);
+}
+.qadamJoriy {
+  color: var(--xb-ok);
+  border-color: var(--xb-ok);
+  box-shadow: 0 0 0 1px var(--xb-ok);
+  background: var(--xb-ok-bg);
+}
+.qadamJoriy .qadamNom {
+  color: var(--xb-ink);
+}
+.qadamBekor.qadamJoriy {
+  color: var(--xb-ink-muted);
+  border-color: var(--xb-border-strong);
+  box-shadow: none;
+  background: var(--xb-mut-bg);
+}
+
+/* Tarix */
+.tarix {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tarixBand {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 0 0 14px;
+}
+.tarixBand:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background: var(--xb-border);
+}
+.tarixIkon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--xb-info-bg);
+  color: var(--xb-info);
+}
+.tarixTizim .tarixIkon {
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink-strong);
+}
+.tarixMatn {
+  min-width: 0;
+  padding-top: 4px;
+}
+.tarixSarlavha {
+  font-weight: var(--xb-w-medium);
+  color: var(--xb-ink);
+}
+.tarixIzoh {
+  margin-top: 4px;
+  padding: 6px 10px;
+  border-radius: var(--xb-r-md);
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink-strong);
+  font-size: var(--xb-t-md);
+  line-height: 1.45;
+}
+
+/* Qiymat grafigi */
+.grafik {
+  width: 100%;
+  min-width: 0;
+}
+.grafik svg {
+  display: block;
+  overflow: visible;
+}
+.chegaraChiziq {
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+.oqYorliq {
+  font-size: var(--xb-t-sm);
+  fill: var(--xb-ink-muted);
+  font-family: var(--xb-font-mono);
+}
+.chiziq {
+  fill: none;
+  stroke: var(--xb-ink-strong);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.nuqta {
+  stroke: var(--xb-surface);
+  stroke-width: 2;
+}
+.nuqta:focus {
+  outline: none;
+  stroke: var(--xb-ink);
+}
+
+/* ---------------- Yangilanishlar ---------------- */
+.oqimTarmoq {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--xb-s-4);
+  align-items: start;
+}
+.ulanish {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 14px;
+  margin: 0;
+  font-size: var(--xb-t-md);
+}
+.ulanish dt {
+  color: var(--xb-ink-muted);
+}
+.ulanish dd {
+  margin: 0;
+}
+.paket {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px;
+  border: 1px dashed var(--xb-border-strong);
+  border-radius: var(--xb-r-lg);
+  color: var(--xb-info);
+}
+.paket > div {
+  flex: 1;
+  min-width: 160px;
+  color: var(--xb-ink);
+}
+.paketNatija {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--xb-r-lg);
+  background: var(--xb-ok-bg);
+  color: var(--xb-ink-strong);
+  line-height: 1.45;
+}
+.paketNatija > b {
+  color: var(--xb-ok);
+}
+.qoidalar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+.qoidalar > button {
+  align-self: flex-start;
+}
+.qoida {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: var(--xb-t-md);
+}
+.qoidaSarlavha {
+  margin-top: 6px;
+  font-size: var(--xb-t-sm);
+  font-weight: var(--xb-w-semi);
+  color: var(--xb-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ---------------- Hujjat sarlavhasi ---------------- */
+.hujjatBosh {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--xb-s-4);
+  flex-wrap: wrap;
+}
+.hujjatBoshChap {
+  min-width: 0;
+  flex: 1 1 420px;
+}
+.hujjatSarlavha {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 6px 0 2px;
+  font-size: 24px;
+  font-weight: var(--xb-w-semi);
+  letter-spacing: -0.4px;
+}
+.hujjatIzoh {
+  color: var(--xb-ink-strong);
+}
+
+/* ---------------- Holat kartochkalari ---------------- */
+.holatQator {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--xb-s-3);
+}
+.holatKarta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 14px 16px 14px 20px;
+  background: var(--xb-surface);
+  border: 1px solid var(--xb-border);
+  border-radius: var(--xb-r-xl);
+  box-shadow: var(--xb-shadow-card);
+}
+.holatKarta::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--urgu, var(--xb-border-strong));
+}
+.holatNom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 22px;
+  font-size: var(--xb-t-md);
+  font-weight: var(--xb-w-medium);
+  color: var(--xb-ink-muted);
+}
+.qalam {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: var(--xb-r-sm);
+  background: transparent;
+  color: var(--xb-ink-muted);
+  cursor: pointer;
+}
+.qalam:hover {
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink);
+}
+.holatKatta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: var(--xb-w-semi);
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+.holatKattaMatn {
+  font-size: var(--xb-t-xl);
+  letter-spacing: 0;
+}
+.qizil {
+  color: var(--xb-err);
+}
+.holatSub {
+  font-size: var(--xb-t-md);
+  color: var(--xb-ink-strong);
+}
+.holatFarq {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-muted);
+}
+.farqYaxshi {
+  color: var(--xb-ok);
+}
+.farqYomon {
+  color: var(--xb-err);
+}
+.tahrirQator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.tahrirQator > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+.tahrirBlok {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tahrirOk,
+.tahrirX {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--xb-border);
+  border-radius: var(--xb-r-sm);
+  background: var(--xb-surface);
+  cursor: pointer;
+}
+.tahrirOk {
+  color: var(--xb-ok);
+}
+.tahrirX {
+  color: var(--xb-ink-muted);
+}
+
+/* ---------------- Keyingi qadam / yopilish ---------------- */
+.keyingi,
+.yopilish {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--xb-r-xl);
+  border: 1px solid var(--xb-info);
+  background: var(--xb-info-bg);
+  color: var(--xb-info);
+}
+.keyingiMatn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  color: var(--xb-ink-strong);
+  line-height: 1.45;
+}
+.keyingiMatn > b {
+  color: var(--xb-ink);
+}
+.keyingiAmal {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.yopilish {
+  border-color: var(--xb-ok);
+  background: var(--xb-ok-bg);
+  color: var(--xb-ok);
+}
+.yopilishBekor {
+  border-color: var(--xb-border-strong);
+  background: var(--xb-mut-bg);
+  color: var(--xb-ink-muted);
+}
+
+/* ---------------- Risk obyekti ---------------- */
+.obyekt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px 20px;
+}
+.obyektQator {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+.obyektIkon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--xb-r-md);
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink-strong);
+}
+.obyektMatn {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  line-height: 1.4;
+}
+.obyektNom {
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-muted);
+}
+.ignorQator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 8px 10px;
+  border-radius: var(--xb-r-md);
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink-muted);
+  font-size: var(--xb-t-md);
+}
+.ignorQator > span {
+  flex: 1;
+}
+.ignorFaol {
+  background: var(--xb-warn-bg);
+  color: var(--xb-warn);
+  font-weight: var(--xb-w-medium);
+}
+
+/* ---------------- Izohlar ---------------- */
+.izohBand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ---------------- Rekvizitlar (yig'ilgan) ---------------- */
+.rekvizit {
+  background: var(--xb-surface);
+  border: 1px solid var(--xb-border);
+  border-radius: var(--xb-r-xl);
+  box-shadow: var(--xb-shadow-card);
+}
+.rekvizit summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: var(--xb-w-semi);
+}
+.rekvizit summary::-webkit-details-marker {
+  display: none;
+}
+.rekvizit summary .kichik {
+  flex: 1;
+  margin: 0;
+  font-weight: var(--xb-w-normal);
+}
+.rekvizit summary svg {
+  color: var(--xb-ink-muted);
+  transition: transform 0.15s;
+}
+.rekvizit[open] summary svg {
+  transform: rotate(180deg);
+}
+.rekvizitRoyxat {
+  margin: 0;
+  padding: 0 16px 12px;
+}
+.rekvizitQator {
+  display: grid;
+  grid-template-columns: minmax(160px, 240px) 1fr;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid var(--xb-border-row);
+  font-size: var(--xb-t-md);
+}
+.rekvizitQator dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--xb-ink-muted);
+}
+.rekvizitQator dd {
+  margin: 0;
+  color: var(--xb-ink);
+  overflow-wrap: anywhere;
+}
+
+/* ---------------- Tarix filtri ---------------- */
+.tarixFiltr {
+  margin-bottom: 14px;
+  overflow-x: auto;
+}

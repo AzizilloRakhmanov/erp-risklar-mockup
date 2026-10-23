@@ -11,6 +11,8 @@ npm install
 npm run dev      # http://localhost:5190
 npm run build
 npm run lint
+npm run smoke    # 41 ekranni SSR bilan chizadi
+npm run check    # lint + smoke — ishni shu bilan yakunlang
 ```
 
 ## Tuzilma
@@ -28,4 +30,8 @@ npm run lint
 
 ## Holat
 
-Loyiha skeleti tayyor, modullar hali yo'q.
+| Modul | Ekran | Izoh |
+|---|---|---|
+| Risk monitoring (`risklar`) | 1 panel + 20 hisobot + sozlamalar | [README](src/modules/risklar/README.md) |
+
+Manba prototip tahlili: [docs/lovable-prototip-tahlili.md](docs/lovable-prototip-tahlili.md).

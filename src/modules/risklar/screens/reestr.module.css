@@ -1,0 +1,316 @@
+/* ---------------- Reyestr jadvali ---------------- */
+.wrap {
+  overflow-x: auto;
+  margin-top: 12px;
+  border-top: 1px solid var(--xb-border);
+}
+.jadval {
+  width: 100%;
+  border-collapse: collapse;
+}
+.jadval th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: var(--xb-t-sm);
+  font-weight: var(--xb-w-semi);
+  color: var(--xb-ink-muted);
+  background: var(--xb-surface-head);
+  border-bottom: 1px solid var(--xb-border);
+  white-space: nowrap;
+}
+.jadval td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--xb-border-row);
+  vertical-align: middle;
+}
+.jadval tbody tr:hover td {
+  background: var(--xb-surface-hover);
+}
+.ong {
+  text-align: right !important;
+}
+.mono {
+  font-family: var(--xb-font-mono);
+  white-space: nowrap;
+}
+.ochiq td {
+  color: var(--xb-ink-muted);
+}
+.bosh {
+  padding: 40px !important;
+  text-align: center;
+  color: var(--xb-ink-muted);
+}
+.nomTd {
+  min-width: 260px;
+  max-width: 420px;
+}
+.nom {
+  color: var(--xb-ink);
+  font-weight: var(--xb-w-semi);
+  text-decoration: none;
+  line-height: 1.35;
+}
+.nom:hover {
+  text-decoration: underline;
+}
+.izoh {
+  margin-top: 2px;
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-muted);
+}
+.formulaTd {
+  min-width: 180px;
+  max-width: 320px;
+}
+.manbaTizim,
+.manbaMaxsus {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--xb-r-pill);
+  font-size: var(--xb-t-sm);
+  font-weight: var(--xb-w-semi);
+  white-space: nowrap;
+}
+.manbaTizim {
+  background: var(--xb-mut-bg);
+  color: var(--xb-ink-strong);
+}
+.manbaMaxsus {
+  background: var(--xb-info-bg);
+  color: var(--xb-info);
+}
+.amallar {
+  display: inline-flex;
+  gap: 2px;
+  justify-content: flex-end;
+}
+.qulf {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--xb-ink-faint);
+}
+
+/* ---------------- Forma ---------------- */
+.orqaga {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--xb-t-md);
+  font-weight: var(--xb-w-medium);
+  color: var(--xb-ink-muted);
+  text-decoration: none;
+}
+.orqaga:hover {
+  color: var(--xb-ink);
+}
+.forma {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
+  gap: var(--xb-s-4);
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  .forma {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.bolimlar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xb-s-4);
+  min-width: 0;
+}
+.korinish {
+  position: sticky;
+  top: 76px;
+}
+.maydonlar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px 16px;
+}
+.maydon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.keng {
+  grid-column: 1 / -1;
+}
+.yorliq {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--xb-t-md);
+  font-weight: var(--xb-w-medium);
+  color: var(--xb-ink-strong);
+}
+.yordam {
+  margin: 8px 0 0;
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-muted);
+  line-height: 1.45;
+}
+.yordam code,
+.ifoda {
+  font-family: var(--xb-font-mono);
+  font-size: var(--xb-t-sm);
+  padding: 1px 5px;
+  border-radius: var(--xb-r-xs);
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink);
+}
+.yordamIchki {
+  font-weight: var(--xb-w-normal);
+  color: var(--xb-ink-muted);
+  font-family: var(--xb-font-mono);
+  font-size: var(--xb-t-sm);
+}
+.xato {
+  font-size: var(--xb-t-sm);
+  color: var(--xb-err);
+}
+.harf {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--xb-r-xs);
+  background: var(--xb-ink);
+  color: var(--xb-surface);
+  font-family: var(--xb-font-mono);
+  font-size: var(--xb-t-sm);
+  font-weight: var(--xb-w-bold);
+}
+.tanlovlar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+.tanlov {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--xb-border);
+  border-radius: var(--xb-r-lg);
+  background: var(--xb-surface);
+  color: var(--xb-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.tanlov:hover {
+  border-color: var(--xb-border-strong);
+}
+.tanlov span {
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-muted);
+  line-height: 1.4;
+}
+.tanlovOn {
+  border-color: var(--xb-ok);
+  box-shadow: 0 0 0 1px var(--xb-ok);
+  background: var(--xb-ok-bg);
+}
+.amalQator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  border-radius: var(--xb-r-xl);
+  background: var(--xb-surface);
+  border: 1px solid var(--xb-border);
+  box-shadow: var(--xb-shadow-card);
+  position: sticky;
+  bottom: 12px;
+}
+
+/* ---------------- Jonli ko'rinish ---------------- */
+.korinishIch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.korinishIch > .yorliq {
+  margin-top: 10px;
+  color: var(--xb-ink-muted);
+  font-size: var(--xb-t-sm);
+  font-weight: var(--xb-w-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.korinishKod {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.35;
+}
+.korinishTavsif {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--xb-r-md);
+  background: var(--xb-surface-sunk);
+  color: var(--xb-ink-strong);
+  line-height: 1.5;
+  font-size: var(--xb-t-md);
+}
+.top {
+  display: flex;
+  flex-direction: column;
+}
+.topQator {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--xb-border-row);
+  font-size: var(--xb-t-md);
+}
+.topNom {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ustunlar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ustunlar span {
+  padding: 3px 8px;
+  border-radius: var(--xb-r-xs);
+  background: var(--xb-surface-sunk);
+  font-size: var(--xb-t-sm);
+  color: var(--xb-ink-strong);
+}
+.ustunlar .ustunAsosiy {
+  background: var(--xb-ink);
+  color: var(--xb-surface);
+  font-weight: var(--xb-w-semi);
+}
+.topilmadi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 56px 24px;
+  text-align: center;
+  color: var(--xb-ink-muted);
+  background: var(--xb-surface);
+  border: 1px dashed var(--xb-border-strong);
+  border-radius: var(--xb-r-xl);
+}
+.topilmadi b {
+  color: var(--xb-ink);
+  font-size: var(--xb-t-lg);
+}

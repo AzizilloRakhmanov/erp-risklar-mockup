@@ -122,6 +122,25 @@
   /* Brend belgisi — yagona gradient ishlatiladigan joy */
   --xb-brand: linear-gradient(155deg, var(--xb-ok-bright), var(--xb-ok-deep));
 
+  /* ---------- Risk darajalari ----------
+     Diagramma belgisi (ustun, katak) uchun holat ranglari — ikkala mavzuda
+     bir xil. Yorug' fonda «past» va «orta» 3:1 dan past: shuning uchun ular
+     hech qachon yolg'iz kelmaydi — yonida ikona va yorliq turadi.
+     Belgi (pill) matni alohida pog'ona: fon ustida ≥ 4.5:1. */
+  --xb-st-norma: #0ca30c;
+  --xb-st-past: #fab219;
+  --xb-st-orta: #ec835a;
+  --xb-st-yuqori: #d03b3b;
+
+  --xb-st-norma-bg: #e9f4f0;
+  --xb-st-past-bg: #fdf3d8;
+  --xb-st-orta-bg: #fdeae2;
+  --xb-st-yuqori-bg: #fbe5e2;
+  --xb-st-norma-ink: #0f7b5a;
+  --xb-st-past-ink: #7a5200;
+  --xb-st-orta-ink: #a33d16;
+  --xb-st-yuqori-ink: #b0301c;
+
   /* ---------- Diagramma ---------- */
   --xb-chart-base: #5f6d80; /* boshlang'ich ustun */
   --xb-chart-step: #17a579; /* qo'shiluvchi qadam */
@@ -198,6 +217,15 @@ html[data-theme='dark'] {
   --xb-shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.75), 0 6px 16px rgba(0, 0, 0, 0.5);
   --xb-shadow-brand: 0 2px 6px rgba(47, 203, 152, 0.24);
   --xb-parda: rgba(4, 8, 12, 0.66);
+
+  --xb-st-norma-bg: #10352a;
+  --xb-st-past-bg: #35290c;
+  --xb-st-orta-bg: #3a2116;
+  --xb-st-yuqori-bg: #3b1b17;
+  --xb-st-norma-ink: #2fcb98;
+  --xb-st-past-ink: #f4c55a;
+  --xb-st-orta-ink: #f39a74;
+  --xb-st-yuqori-ink: #f2705a;
 
   --xb-chart-base: #8d9db3;
   --xb-chart-step: #35d6a2;
