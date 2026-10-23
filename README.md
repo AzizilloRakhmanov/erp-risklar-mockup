@@ -11,19 +11,24 @@ npm install
 npm run dev      # http://localhost:5190
 npm run build
 npm run lint
-npm run smoke    # 41 ekranni SSR bilan chizadi
+npm run smoke    # barcha ekranlarni SSR bilan chizadi
 npm run check    # lint + smoke — ishni shu bilan yakunlang
-npm run deploy   # check → build → GitHub Pages (gh-pages branch)
+npm run deploy   # check → build → mock.apptest.uz (MOCKUP_TOKEN kerak)
 ```
 
 ## Deploy
 
-Sayt: **https://azizillorakhmanov.github.io/erp-risklar-mockup/**
+Sayt: **https://risklar-m.apptest.uz** (mock.apptest.uz portali, loyiha
+«Azizillo Rakhmanov», mockup nomi `risklar-m`).
 
-`npm run deploy` tekshiruvdan o'tgan build'ni `mockup` remote'ining
-`gh-pages` branch'iga yuboradi ([scripts/deploy.mjs](scripts/deploy.mjs)).
-GitHub Pages bir-ikki daqiqada yangilanadi. Remote:
-`git@github-azizillo.rakhmanov:AzizilloRakhmanov/erp-risklar-mockup.git`.
+```bash
+MOCKUP_TOKEN=mpt_... npm run deploy
+```
+
+[scripts/deploy.mjs](scripts/deploy.mjs) tekshiruvdan o'tgan build'ni zip
+qilib portalning `/api/deploy` iga yuboradi (har safar yangi versiya) va
+`running` bo'lguncha kutadi. Token portalning Profil sahifasida yaratiladi
+va **repoga yozilmaydi**.
 
 ## Tuzilma
 
