@@ -13,7 +13,17 @@ npm run build
 npm run lint
 npm run smoke    # 41 ekranni SSR bilan chizadi
 npm run check    # lint + smoke — ishni shu bilan yakunlang
+npm run deploy   # check → build → GitHub Pages (gh-pages branch)
 ```
+
+## Deploy
+
+Sayt: **https://azizillorakhmanov.github.io/erp-risklar-mockup/**
+
+`npm run deploy` tekshiruvdan o'tgan build'ni `mockup` remote'ining
+`gh-pages` branch'iga yuboradi ([scripts/deploy.mjs](scripts/deploy.mjs)).
+GitHub Pages bir-ikki daqiqada yangilanadi. Remote:
+`git@github-azizillo.rakhmanov:AzizilloRakhmanov/erp-risklar-mockup.git`.
 
 ## Tuzilma
 

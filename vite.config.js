@@ -5,6 +5,9 @@ import { fileURLToPath, URL } from 'node:url';
 const r = (p) => fileURLToPath(new URL(p, import.meta.url));
 
 export default defineConfig({
+  /* Nisbiy yo'llar: sayt GitHub Pages da `/erp-risklar-mockup/` ostida ochiladi.
+     Marshrut hash orqali, shuning uchun server sozlamasi kerak emas. */
+  base: './',
   plugins: [react()],
   resolve: {
     alias: {

@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "smoke": "node scripts/smoke.mjs",
-    "check": "eslint . && node scripts/smoke.mjs"
+    "check": "eslint . && node scripts/smoke.mjs",
+    "deploy": "node scripts/deploy.mjs"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
